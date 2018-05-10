@@ -1,0 +1,57 @@
+@import "normalize.scss";
+@import "vars.scss";
+@import "./components/calculator.scss";
+@import "./components/button.scss";
+@import "./components/input.scss";
+@import "./components/select.scss";
+@import "./components/spinner.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $background;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  color: $font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media(max-width: 768px) {
+    background: $background-wrapper;
+  }
+}
+
+.exchanger {
+  background: $background-wrapper;
+  border: 1px solid $wrapper-border;
+  width: 100%;
+  max-width: 320px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+
+  @media(max-width: 768px) {
+    max-width: initial;
+    position: initial;
+    transform: initial;
+    border: 0;
+  }
+}
+
+.exchanger__container {
+  padding: 20px;
+}
+
+.exchanger__title {
+  margin: 0 0 0 15px;
+}
+
+.exchanger__submit {
+  margin-top: 20px;
+}
+
+.flex {
+  display: flex;
+}
