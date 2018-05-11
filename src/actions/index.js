@@ -54,7 +54,9 @@ export function buyCurrency() {
 export function fetchApiData() {
   return (dispatch) => {
     dispatch({ type: ENABLE_SPINNER })
-    return axios.get('https://api.bitfinex.com/v1/pubticker/BTCUSD')
+    const apiUrl = process.env.API_URL ?
+      `${process.env.API_URL}/v1/pubticker/BTCUSD` : 'https://api.bitfinex.com/v1/pubticker/BTCUSD'
+    return axios.get(apiUrl)
       .then((res) => {
         const btcPrice = Number(res.data.last_price)
         dispatch(setBtcPrice(btcPrice))

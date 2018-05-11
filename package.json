@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server ---mode development --open",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server ---mode development --open & nodemon ./server/app",
     "build": "rm -rf ./dist && npm run test && npm run build:webpack",
     "build:webpack": "cross-env NODE_ENV=production webpack --mode production --config webpack.config.prod.js --progress --profile --colors",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=development jest"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./enzyme.setup.js",
@@ -24,7 +24,11 @@
   "homepage": "https://github.com/cyrilca/react-redux-usd-to-bitcoin#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "classnames": "^2.2.5",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
     "filter-react-props": "0.0.4",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
@@ -68,6 +72,7 @@
     "jest": "^22.4.3",
     "jest-css-modules": "^1.1.0",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.5",
     "react-test-renderer": "^16.3.2",

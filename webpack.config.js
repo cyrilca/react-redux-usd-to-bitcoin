@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { resolve } = require('path')
 
 const webpack = require('webpack')
@@ -66,6 +67,12 @@ const config = {
 
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'API_URL': JSON.stringify(process.env.API_URL)
+      }
+    }),
     new ExtractTextPlugin({ filename: './styles/style.css' }),
     new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
     new webpack.HotModuleReplacementPlugin(),
