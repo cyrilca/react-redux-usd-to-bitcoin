@@ -4,6 +4,8 @@ This app is using Bitnex API to fetch up-to-date Bitcoin price.
 
 Demo: https://s3-us-west-2.amazonaws.com/react-redux-btc-trade/index.html
 
+<img src="https://user-images.githubusercontent.com/9072649/39899286-0a0e14d4-5489-11e8-8e86-ac8b7e0c83c3.gif" width="300">
+
 ### What is used:
 - React
 - Redux
