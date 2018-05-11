@@ -28,6 +28,8 @@ Install dependencies
 $ npm install
 ```
 
+Rename .env.example to .env
+
 Run dev server
 ```
 $ npm run dev
