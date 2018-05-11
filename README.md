@@ -35,8 +35,6 @@ Run dev server
 $ npm run dev
 ```
 
-You might need [CORS Toggle](https://chrome.google.com/webstore/detail/cors-toggle/jioikioepegflmdnbocfhgmpmopmjkim?hl=en) extension installed to enable cross-origin resource sharing.
-
 #### Build
 Run tests and build the project
 ```
