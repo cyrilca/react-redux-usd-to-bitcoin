@@ -9,6 +9,7 @@ Demo: https://s3-us-west-2.amazonaws.com/react-redux-btc-trade/index.html
 ### What is used:
 - React
 - Redux
+- Express (used as a proxy server)
 - Webpack
 - ESLint
 - Babel
