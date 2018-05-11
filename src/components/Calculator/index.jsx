@@ -27,9 +27,15 @@ const Calculator = (props) => {
             onChange={(e) => {
               setUsdValue(e.target.value)
             }}
+            onKeyPress={(e) => {
+              if (e.which === 45 || e.which === 189) {
+                e.preventDefault()
+              }
+            }}
             value={usdValue}
             type='number'
             id='trade_from'
+            min='0'
             className='input input--wide'
             placeholder='USD'
           />
@@ -45,13 +51,19 @@ const Calculator = (props) => {
           </Select>
         </div>
         <Input
-          value={btcValue}
-          type='number'
-          id='trade_to'
-          placeholder='Quote'
           onChange={(e) => {
             setBtcValue(e.target.value)
           }}
+          onKeyPress={(e) => {
+            if (e.which === 45 || e.which === 189) {
+              e.preventDefault()
+            }
+          }}
+          value={btcValue}
+          type='number'
+          id='trade_to'
+          min='0'
+          placeholder='Quote'
         />
       </div>
     </div>

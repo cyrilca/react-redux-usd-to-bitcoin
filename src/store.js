@@ -1,7 +1,7 @@
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import reducers from './reducers'
@@ -11,9 +11,15 @@ const persistConfig = {
   storage
 }
 
-const createAppStore = composeWithDevTools(
-  applyMiddleware(logger, thunk)
+let createAppStore = compose(
+  applyMiddleware(thunk)
 )(createStore)
+
+if (module.hot) {
+  createAppStore = composeWithDevTools(
+    applyMiddleware(logger, thunk)
+  )(createStore)
+}
 
 const persistedReducer = persistReducer(persistConfig, reducers)
 
